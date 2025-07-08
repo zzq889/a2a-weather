@@ -10,7 +10,7 @@ class WeatherAgentExecutor(AgentExecutor):
         text = f"Weather in {location}: 🌞 Sunny, 25 °C"
         artifact = {
             "type": "widget",
-            "data": {
+            "payload": {
                 "temperature": 25,
                 "unit": "°C",
                 "condition": "Sunny",

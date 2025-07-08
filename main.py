@@ -1,4 +1,4 @@
-import asyncio, uuid, sys, httpx
+import asyncio, uuid, httpx
 from a2a.client import A2ACardResolver, A2AClient
 from a2a.types import (
     Role,
@@ -8,7 +8,6 @@ from a2a.types import (
     MessageSendParams,
     SendMessageRequest
 )
-from a2a.utils import get_message_text
 
 async def main() -> None:
     location = "Paris"
