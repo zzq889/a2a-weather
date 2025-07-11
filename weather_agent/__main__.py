@@ -21,7 +21,7 @@ if __name__ == "__main__":
         version="0.0.1",
         defaultInputModes=["text"],
         defaultOutputModes=["text"],
-        capabilities=AgentCapabilities(streaming=False),
+        capabilities=AgentCapabilities(streaming=True),
         skills=[skill],
     )
 
