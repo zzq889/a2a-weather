@@ -6,5 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "a2a-sdk (>=0.2.6, <0.2.11)",
+    "dotenv>=0.9.9",
+    "openai>=1.95.1",
     "uvicorn>=0.35.0",
 ]

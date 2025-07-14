@@ -11,5 +11,5 @@ uv run weather_agent
 2. Run the test client
 
 ```
-uv run main.py
+uv run examples/test_client.py
 ```
