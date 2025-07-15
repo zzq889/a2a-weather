@@ -3,7 +3,7 @@ Pre-defined agent configurations for common use cases.
 """
 
 from typing import List
-from .models import Agent
+from .models import Agent, AgentParameter, ParameterType
 
 def create_default_agents() -> List[Agent]:
     """Create a set of default agents for common use cases."""
@@ -46,7 +46,30 @@ def create_default_agents() -> List[Agent]:
                 "How do I handle missing values in my dataset?",
                 "Write a SQL query to find top customers"
             ],
-            priority=3
+            priority=3,
+            parameters=[
+                AgentParameter(
+                    name="dataset_type",
+                    type=ParameterType.STRING,
+                    required=False,
+                    description="Type of dataset being analyzed (e.g., sales, customer, financial)",
+                    examples=["sales", "customer", "financial", "marketing"]
+                ),
+                AgentParameter(
+                    name="analysis_goal",
+                    type=ParameterType.STRING,
+                    required=False,
+                    description="Primary goal of the analysis",
+                    examples=["trend_analysis", "prediction", "classification", "clustering"]
+                ),
+                AgentParameter(
+                    name="time_period",
+                    type=ParameterType.STRING,
+                    required=False,
+                    description="Time period for the analysis",
+                    examples=["last_month", "Q1_2023", "yearly", "daily"]
+                )
+            ]
         ),
         Agent(
             name="creative_writer",

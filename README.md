@@ -13,3 +13,9 @@ uv run weather_agent
 ```
 uv run examples/test_client.py
 ```
+
+3. Run the interactive demo
+```
+uv run weather_interactive_demo.py
+```
+

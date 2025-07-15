@@ -32,14 +32,14 @@ class WeatherAgentExecutor(AgentExecutor):
         }
         data_part = Part(root=DataPart(data=artifact))
 
-        # 4) Stream word-by-word
+        # 4) Stream word-by-word (cumulative like LLM streaming)
         words = full_text.split()
         chunk = ""
         for i, word in enumerate(words):
             is_last = (i == len(words) - 1)
             chunk += word + (" " if not is_last else "")
             if not is_last:
-                # interim update
+                # interim update with cumulative text (like LLM streaming)
                 await updater.update_status(
                     TaskState.working,
                     new_agent_text_message(chunk, task.contextId, task.id)

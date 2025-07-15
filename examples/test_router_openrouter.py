@@ -217,6 +217,12 @@ def run_routing_tests(router: LLMAgentRouter, llm: OpenRouterLLM):
 
             if result.fallback_agents:
                 print(f"   Fallbacks: {result.fallback_agents}")
+            
+            if result.extracted_parameters:
+                print(f"   📋 Parameters: {result.extracted_parameters}")
+            
+            if result.missing_parameters:
+                print(f"   ⚠️  Missing required: {result.missing_parameters}")
 
             # Check if routing is correct
             if result.selected_agent == test['expected_agent']:
@@ -266,6 +272,12 @@ def interactive_mode(router: LLMAgentRouter, llm: OpenRouterLLM):
 
             if result.fallback_agents:
                 print(f"   Fallbacks: {result.fallback_agents}")
+            
+            if result.extracted_parameters:
+                print(f"   📋 Parameters: {result.extracted_parameters}")
+            
+            if result.missing_parameters:
+                print(f"   ⚠️  Missing required: {result.missing_parameters}")
             print()
 
         except KeyboardInterrupt:
